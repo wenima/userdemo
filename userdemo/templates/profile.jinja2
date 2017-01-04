@@ -1,0 +1,23 @@
+{% extends "layout.jinja2" %}
+
+{% block title %}{{ user.firstname }} {{ user.lastname }}{% endblock %}
+{% block body %}
+<h1>Profile for {{ user.firstname }}</h1>
+    <form method="POST">
+        <label for="firstname">{{ user.firstname }}</label><br/>
+        <input type="text" name="firstname"/><br/>
+        <label for="lastname">{{ user.lastname }}</label><br/>
+        <input type="text" name="lastname"/><br/>
+        <label for="username">{{ user.username }}</label><br/>
+        <input type="text" name="username"/><br/>
+        <label for="email">{{ user.email }}</label><br/>
+        <input type="email" name="email"/><br/>
+        <label for="food">{{ user.food }}</label><br/>
+        <input type="text" name="food"/><br/>
+        <label for="password">{{ user.password }}</label><br/>
+        <input type="password" name="password" placeholder="********" pattern="\w{8}" title="8 character password"/><br/>
+        <input type="submit" value="Submit"/>
+    </form>
+</div>
+{% endblock body %}
+{% endblock %}

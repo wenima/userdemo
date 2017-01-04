@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}User Demo{%
+    endblock %}</title>
+    <link rel="stylesheet" href="https://s3.amazonaws.com/codecademy-content/projects/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ request.static_path('userdemo:static/style.css') }}" type="text/css">
+</head>
+<body>
+    <nav>
+        <div class='vertical-container'>
+            <div class='Home'>
+                <button type='button' class='btn'>
+                    <a href="{{ request.route_url('home') }}">Home</a>
+                </button>
+            </div>
+            <div class='Register'>
+                <button type='button' class='btn'>
+                    <a href="{{ request.route_url('register') }}">Register</a>
+                </button>
+            </div>
+            <div class='Register'>
+                <button type='button' class='btn'>
+                    <a href="{{ request.route_url('login') }}">Login</a>
+                </button>
+            </div>
+            <div class='Register'>
+                <button type='button' class='btn'>
+                    <a href="{{ request.route_url('logout') }}">LogOut</a>
+                </button>
+            </div>
+            <div class='Profile'>
+                <button type='button' class='btn'>
+                    <a href="{{ request.route_url('profile') }}">Edit Profile</a>
+                </button>
+            </div>
+        </div>
+    </nav>
+    {% block body %}
+    {% endblock %}
+    {% block content %}
+    {% endblock %}
+</body>
+</html>
